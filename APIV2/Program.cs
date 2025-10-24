@@ -31,13 +31,20 @@ builder.Services.AddControllers()
         
     });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(); // Swagger UI
+
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();      // JSON Swagger
+    app.UseSwaggerUI();    // Interface graphique
+
 }
 
 app.UseHttpsRedirection();
