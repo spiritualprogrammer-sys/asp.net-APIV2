@@ -1,6 +1,7 @@
 using System;
 using APIV2.Data;
 using APIV2.Dtos.Stock;
+using APIV2.Helpers;
 using APIV2.Interfaces;
 using APIV2.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -40,10 +41,20 @@ public class StockRepository : IStockRepository
 
     }
 
-    public  async Task<List<Stocks>> GetAllAsync()
+    public  async Task<List<Stocks>> GetAllAsync(QueryObject queryObject)
     {
-        var stocks = await _context.Stocks.Include(c => c.Comments).ToListAsync();
-       return stocks;
+        var stocks =  _context.Stocks.Include(c => c.Comments).AsQueryable();
+        if (!string.IsNullOrWhiteSpace(queryObject.CompanyName))
+        {
+            stocks = stocks.Where(x => x.CompanyName.Contains(queryObject.CompanyName));
+        }
+
+        if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
+        {
+            stocks = stocks.Where(x => x.Symbole.Contains(queryObject.Symbol));
+        }
+
+       return await stocks.ToListAsync();
     }
 
     public async Task<Stocks?> GetByIdAsync(int id)
