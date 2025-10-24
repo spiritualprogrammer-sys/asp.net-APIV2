@@ -1,0 +1,72 @@
+@APIV2_HostAddress = http://localhost:5232
+
+GET {{APIV2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{APIV2_HostAddress}}/api/stock
+Accept: application/json
+
+
+### Create a new stock
+POST http://localhost:5232/api/stock
+Content-Type: application/json
+
+{
+    "Symbole": "AAPL",
+    "CompanyName": "Apple Inc.",
+    "Purchase": 150,
+    "LastDiv": 0.88,
+    "Industry": "Technology",
+    "MarketCap": 2500000000
+}
+
+### Update a stock
+PUT http://localhost:5232/api/stock/2
+Content-Type: application/json
+
+{
+    "Symbole": "AAPLS",
+    "CompanyName": "Apple Inc. Updated",
+    "Purchase": 155,
+    "LastDiv": 0.90,
+    "Industry": "Technology",
+    "MarketCap": 2600000000
+}
+
+
+### Delete a stock
+DELETE http://localhost:5232/api/stock/1
+
+
+### Get stock by id
+GET http://localhost:5232/api/stock/1
+Accept: application/json
+
+### Get Comment All
+GET http://localhost:5232/api/comment
+Accept: application/json
+
+### Create Comment
+POST http://localhost:5232/api/comment/1002
+Content-Type: application/json
+
+{
+  "title": "Analyse informatique",
+  "content": "Informatique Analyse"
+}
+
+
+### Update a stock
+PUT http://localhost:5232/api/comment/1
+Content-Type: application/json
+
+{
+  "title": "Analyse Sportif",
+  "content": "Sportif"
+}
+
+
+### Delete a stock
+DELETE http://localhost:5232/api/comment/1
