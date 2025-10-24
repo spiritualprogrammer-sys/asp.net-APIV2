@@ -27,6 +27,8 @@ builder.Services.AddControllers()
     {
         options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
         options.SerializerSettings.Formatting = Formatting.Indented;
+        
+        
     });
 
 

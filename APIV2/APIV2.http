@@ -14,11 +14,11 @@ POST http://localhost:5232/api/stock
 Content-Type: application/json
 
 {
-    "Symbole": "AAPL",
-    "CompanyName": "Apple Inc.",
+    "Symbole": "Samsungs",
+    "CompanyName": "SamSung Inc.",
     "Purchase": 150,
     "LastDiv": 0.88,
-    "Industry": "Technology",
+    "Industry": "Phone",
     "MarketCap": 2500000000
 }
 
