@@ -1,10 +1,12 @@
 using System;
 using APIV2.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace APIV2.Data;
 
-public class ApplicationContextDb : DbContext
+public class ApplicationContextDb : IdentityDbContext<AppUser>
 {
 
     public ApplicationContextDb(DbContextOptions dbContextOptions) : base(dbContextOptions)
@@ -20,12 +22,23 @@ public class ApplicationContextDb : DbContext
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuration explicite de la relation
-        /*    modelBuilder.Entity<Stocks>()
-                .HasMany(s => s.Comments)
-                .WithOne(c => c.Stocks)
-                .HasForeignKey(c => c.StockId)
-                .OnDelete(DeleteBehavior.Cascade); */
+            List<IdentityRole> roles = new List<IdentityRole>
+            {
+                new IdentityRole
+                {
+                    Id = "1",
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
+                },
+                
+                new IdentityRole
+                {
+                    Id = "2",
+                    Name = "User",
+                    NormalizedName = "USER"
+                }
+            };
+            modelBuilder.Entity<IdentityRole>().HasData(roles) ;
         }
     
 }

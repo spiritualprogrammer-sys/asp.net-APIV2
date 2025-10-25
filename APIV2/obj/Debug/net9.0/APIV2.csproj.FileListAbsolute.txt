@@ -170,3 +170,9 @@
 /Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/launchSettings.json
+/Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Microsoft.Extensions.Identity.Core.dll
+/Users/macbook/Desktop/BUREAU/training/C#/APIV2/APIV2/bin/Debug/net9.0/Microsoft.Extensions.Identity.Stores.dll

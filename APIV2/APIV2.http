@@ -70,3 +70,13 @@ Content-Type: application/json
 
 ### Delete a stock
 DELETE http://localhost:5232/api/comment/1
+
+### Create Account User
+POST http://localhost:5232/api/account/register
+Content-Type: application/json
+
+{
+  "username": "konetachies",
+  "email": "konetchasi@gmail.com",
+  "password":"@jAZdjs012#xss"
+}
