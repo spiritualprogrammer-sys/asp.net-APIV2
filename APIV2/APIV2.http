@@ -6,6 +6,7 @@ Accept: application/json
 ###
 
 GET {{APIV2_HostAddress}}/api/stock
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtvbmV0Y2hhc3NpQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJrb25ldGFjaGllc3MiLCJuYmYiOjE3NjE0MzI2ODcsImV4cCI6MTc2MjAzNzQ4NywiaWF0IjoxNzYxNDMyNjg3LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUyNDYifQ.ABCzg3eXD6uU-NARD8jq3gQAFUQQsF4pZI4a6U9Qap6ERTCtM-5HTjZvFrSb6gOYnXCw2Bi3H-fXFd_jM3cyGQ
 Accept: application/json
 
 
@@ -76,7 +77,16 @@ POST http://localhost:5232/api/account/register
 Content-Type: application/json
 
 {
-  "username": "konetachies",
-  "email": "konetchasi@gmail.com",
+  "username": "konetachiess",
+  "email": "konetchassi@gmail.com",
+  "password":"@jAZdjs012#xss"
+}
+
+### Login User
+POST http://localhost:5232/api/account/login
+Content-Type: application/json
+
+{
+  "username": "konetachiess",
   "password":"@jAZdjs012#xss"
 }

@@ -4,6 +4,7 @@ using APIV2.Dtos.Stock;
 using APIV2.Helpers;
 using APIV2.Interfaces;
 using APIV2.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +24,7 @@ public class StocksController: ControllerBase
         _context = context;
     }
 
-
+    [Authorize]
     [HttpGet]
     public async  Task<IActionResult> GetAll([FromQuery] QueryObject queryObject)
     {
