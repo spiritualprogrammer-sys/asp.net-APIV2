@@ -18,9 +18,24 @@ public class ApplicationContextDb : IdentityDbContext<AppUser>
 
     public DbSet<Comments> Comments { get; set; }   
 
+     public DbSet<Portfolio> Portfolios { get; set; }   
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+          // cléf primaire composer
+            modelBuilder.Entity<Portfolio>().HasKey(p => new {p.AppUserId, p.StockId}) ;
+
+            modelBuilder.Entity<Portfolio>()
+            .HasOne(p => p.AppUser)
+            .WithMany(p => p.portfolios)
+            .HasForeignKey(p => p.AppUserId);
+
+            modelBuilder.Entity<Portfolio>()
+            .HasOne(p => p.Stock)
+            .WithMany(p => p.portfolios)
+            .HasForeignKey(p => p.StockId);            
 
             List<IdentityRole> roles = new List<IdentityRole>
             {

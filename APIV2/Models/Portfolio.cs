@@ -1,15 +1,17 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIV2.Models;
 
+
+[Table("Portfolios")]
 public class Portfolio
 {
 
 
-public int AppUserId { get; set; }
-public int PortfolioId { get; set;}
+public string AppUserId { get; set; }
 public int StockId { get; set;} 
 
-public AppUser appUser{ get; set; } 
-public Stocks stock{ get; set; }
+public AppUser AppUser{ get; set; } 
+public Stocks Stock{ get; set; }
 }

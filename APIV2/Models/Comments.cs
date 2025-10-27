@@ -1,8 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace APIV2.Models;
 
+
+[Table("Comments")]
 public class Comments
 {
 

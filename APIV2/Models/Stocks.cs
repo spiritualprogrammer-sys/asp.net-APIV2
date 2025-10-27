@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace APIV2.Models
 {
+
+    [Table("Stocks")]
     public class Stocks
     {
         public int Id { get; set; }
@@ -23,5 +25,7 @@ namespace APIV2.Models
         public string Industry { get; set; } = string.Empty;
         public long MarketCap { get; set; } 
        public List<Comments> Comments { get; set; } = new List<Comments>();
+
+       public List<Portfolio> portfolios { get; set; } = new List<Portfolio>();
     }
 }
